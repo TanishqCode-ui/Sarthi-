@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health Chatbot</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f5ff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      padding: 40px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to Sarathi – Your Mental Health Assistant</h1>
+    <p>Click on the chatbot icon at the bottom-right to start talking.</p>
+  </div>
+
+  <!-- Your Watson Assistant Script (Already added correctly) -->
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "db0f30db-bb56-4252-8e9d-485438a9b9e1",
+      region: "au-syd",
+      serviceInstanceID: "fd1a8704-66b2-4af9-ade1-af7bf03e36ec",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</body>
+</html>
